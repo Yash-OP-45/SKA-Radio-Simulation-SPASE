@@ -12,3 +12,5 @@ Softwares and Modules(Subject to update): OSKAR 2.7.6; oskarpy; astropy; matplot
 -Yash Giri
 +91 9096348046
 yashg22@iitk.ac.in
+
+![alt text]([http://url/to/img.png](https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.skao.int%2Fen%2Fabout-us%2F91%2Fhistory-ska-project&psig=AOvVaw2ETWvBMxXfNVg21NauJgaU&ust=1718902990981000&source=images&cd=vfe&opi=89978449&ved=0CBEQjRxqFwoTCPj555aT6IYDFQAAAAAdAAAAABAE)
