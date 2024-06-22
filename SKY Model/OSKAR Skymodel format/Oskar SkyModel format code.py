@@ -6,10 +6,18 @@ import astropy.units as u
 #conversion function
 def altaz_to_radec(in_csv, out_csv):
     #Observatory Point (remains the same: F-110, Hall5, IITK)
-
-    latitude = 26.509951955711866 * u.deg
-    longitude = 80.22809216211232 * u.deg
-    elevation = 123.51 * u.m
+    print("### Observatory Coordinates ###")
+    LAT=float(input("Enter Latitude (in deg):")) 
+    LONG=float(input("Enter Longitude (in deg):")) 
+    ELEV=float(input("Enter Elevation (in m):")) 
+    
+    latitude = LAT * u.deg
+    longitude = LONG * u.deg
+    elevation = ELEV * u.m
+    
+    #latitude = 26.509951955711866 * u.deg
+    #longitude = 80.22809216211232 * u.deg
+    #elevation = 123.51 * u.m
     curr_location = EarthLocation(lat=latitude, lon=longitude, height=elevation)
     
     ra_dec_dict = []  
@@ -34,6 +42,7 @@ def altaz_to_radec(in_csv, out_csv):
         #General format of OSKAR SkyModel 
         writer.writeheader()
         writer.writerows(ra_dec_dict)
+    print("Record Updated")    
 
 
 in_csv = r'D:\Project - Simulation of the nightsky\First Simulation\SKY Model\OSKAR Skymodel format\ALTAZ.csv'
