@@ -4,12 +4,9 @@ from astropy.time import Time
 import astropy.units as u
 
 #conversion function
-def altaz_to_radec(in_csv, out_csv):
+def altaz_to_radec(in_csv, out_csv, LAT, LONG, ELEV):
     #Observatory Point (remains the same: F-110, Hall5, IITK)
-    print("### Observatory Coordinates ###")
-    LAT=float(input("Enter Latitude (in deg):")) 
-    LONG=float(input("Enter Longitude (in deg):")) 
-    ELEV=float(input("Enter Elevation (in m):")) 
+
     
     latitude = LAT * u.deg
     longitude = LONG * u.deg
@@ -45,6 +42,28 @@ def altaz_to_radec(in_csv, out_csv):
     print("Record Updated")    
 
 
-in_csv = r'D:\Project - Simulation of the nightsky\First Simulation\SKY Model\OSKAR Skymodel format\ALTAZ.csv'
-out_csv = r'D:\Project - Simulation of the nightsky\First Simulation\SKY Model\OSKAR Skymodel format\altaz to radec to OSKAR SkyModel format.csv'
-altaz_to_radec(in_csv, out_csv)
+in_csv = r'D:\Project-Simulation of the nightsky\First Simulation\SKY Model\OSKAR Skymodel format\ALTAZ.csv'
+out_csv = r'D:\Project-Simulation of the nightsky\First Simulation\SKY Model\OSKAR Skymodel format\altaz to radec to OSKAR SkyModel format.csv'
+print("Default Observatory Coordindates \n" 
+    "latitude = 26.509951955711866 * u.deg \n"  
+    "longitude = 80.22809216211232 * u.deg \n"  
+    "elevation = 123.51 * u.m \n"  
+    
+
+"Continue: 1 \n" 
+"New Coordinates: 2 \n"
+
+)
+x=int(input())
+
+if x==1:
+    altaz_to_radec(in_csv, out_csv,26.509951955711866,80.22809216211232,123.51)
+elif x==2:
+    LAT=float(input("Enter Latitude (in deg):")) 
+    LONG=float(input("Enter Longitude (in deg):")) 
+    ELEV=float(input("Enter Elevation (in m):")) 
+    altaz_to_radec(in_csv, out_csv, LAT, LONG, ELEV)    
+
+
+
+
