@@ -1,0 +1,518 @@
+<html>
+<head>
+<link rel="StyleSheet" href="/classes/classes.css" type="text/css"> 
+<title>
+Celestial Coordinates
+</title>
+</head>
+<body>
+<!-- Creative Commons License -->
+<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/2.0/"><img alt="Creative Commons License" border="0" src="http://creativecommons.org/images/public/somerights20.gif" /></a>
+Copyright &copy; Michael Richmond.
+This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/2.0/">Creative Commons License</a>.
+<P>
+<!-- /Creative Commons License -->
+<!--
+
+<rdf:RDF xmlns="http://web.resource.org/cc/"
+    xmlns:dc="http://purl.org/dc/elements/1.1/"
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+<Work rdf:about="">
+   <dc:type rdf:resource="http://purl.org/dc/dcmitype/Text" />
+   <license rdf:resource="http://creativecommons.org/licenses/by-nc-sa/2.0/" />
+</Work>
+
+<License rdf:about="http://creativecommons.org/licenses/by-nc-sa/2.0/">
+   <permits rdf:resource="http://web.resource.org/cc/Reproduction" />
+   <permits rdf:resource="http://web.resource.org/cc/Distribution" />
+   <requires rdf:resource="http://web.resource.org/cc/Notice" />
+   <requires rdf:resource="http://web.resource.org/cc/Attribution" />
+   <prohibits rdf:resource="http://web.resource.org/cc/CommercialUse" />
+   <permits rdf:resource="http://web.resource.org/cc/DerivativeWorks" />
+   <requires rdf:resource="http://web.resource.org/cc/ShareAlike" />
+</License>
+
+</rdf:RDF>
+
+-->
+
+ 
+<h1>
+Celestial Coordinates
+</h1>
+
+<P>
+<UL>
+<LI> <a href="#radec">Right Ascension and Declination </a>
+<LI> <a href="#altaz">Altitude and Azimuth </a>
+<LI> <a href="#trig">A very little spherical trigonometry</a>
+</UL>
+
+Right Ascension (or "RA") and Declination (or "Dec") 
+are <i>global</i> coordinates:
+any particular star has the same RA and Dec for all
+observers on Earth, and that position remains the
+same, night after night.
+Altitude and Azimuth, on the other hand,
+are <i>local</i> coordinates:
+each observer sets up his own reference frame.
+Moreover, the altitude and azimuth of a 
+given star will change over just a few minutes as
+the star appears to rise, move across the sky, 
+and set.
+
+
+
+
+<P>
+<hr>
+<P>
+
+<P>
+<a name="radec">
+<h4>
+Right Ascension and Declination
+</h4>
+
+<P>
+On Earth, one way to describe a location is with a coordinate
+system which is fixed to the Earth's surface.
+
+<P>
+<img src="./earth_coord.gif" width=530 height=399>
+
+<P>
+The system is oriented by the spin axis of the Earth,
+and has special points at the North and South Poles.
+We use lines of 
+<b>latitude</b> and <b>longitude</b>
+to demarcate the surface.
+It's obvious that latitude is measured away from the equator.
+But where is the starting point for longitude?
+There is no "obvious" choice.
+After a lot of dickering,
+European nations finally decided to use the 
+location of the Greenwich Observatory in England
+as the starting point for longitude.
+
+<P>
+There are several ways to specify a location --
+for example, that of the RIT Observatory.
+One can use degrees:
+<pre><font size=+1>
+ latitude 43.0758 degrees North, longitude 77.6647 degrees West of Greenwich
+</font></pre>
+
+<P>
+Or degrees, minutes and seconds:
+<pre><font size=+1>
+ latitude 43:04:33 North, longitude 77:39:53 West 
+</font></pre>
+
+<P>
+Or, in the case of longitude, one can measure in time zones.
+The sun will set at the RIT Observatory about 5 hours and 11 minutes
+later than it does at Greenwich, 
+so one could say
+<pre><font size=+1>
+ latitude 43:04:33 North, longitude 05 hours 11 minutes West
+</font></pre>
+
+
+<P>
+<h4>
+The celestial coordinates
+</h4>
+
+<P>
+On can make a similar coordinate system which is "fixed
+to the sky":
+<P>
+<img src="./sky_coord.gif" width=736 height=549>
+
+<P>
+Once again, we use the Earth's rotation axis to orient the
+coordinates.
+There are two special places, the North and South Celestial 
+Poles.
+As the Earth rotates (to the East), 
+the celestial sphere appears to rotate (to the West).
+Stars appear to move in circles:
+small ones near the celestial poles, and large ones close to the 
+celestial equator:
+
+<P>
+<img src="./northpole_malin.jpg" width=400 height=300>
+<br>
+Image copyright 
+<a href="http://www.aao.gov.au/images.html/general/malin.html"> 
+David Malin.</a>
+
+<P>
+We again use two orthogonal coordinates to describe a
+position:
+<UL>
+<LI> <b>Declination</b>, like a celestial latitude
+<LI> <b>Right Ascension</b>, like a celestial longitude
+</UL>
+As with latitude, Declination is measured away from the celestial equator.
+But there is again no obvious choice for the starting point of the
+other set of coordinates.
+Where should we start counting Right Ascension?
+The rather arbitrary choice made by astronomers long ago was
+to pick the point at which the Sun appears to cross the 
+celestial equator from South to North as it moves through the
+sky during the course of a year.
+We call that point the "vernal equinox".
+
+<P>
+<img src="./sun_ecliptic_small.gif" width=445 height=444>
+<img src="./sun_ecliptic_2_small.gif" width=445 height=444>
+
+<P>
+Once again, there are several ways to express a location.
+The star Sirius, for example, can be described as at
+
+<pre><font size=+1>
+  Right Ascension 101.287 degrees, Declination -16.716 degrees
+</font> </pre>
+
+
+<P>
+We can also express the Declination in Degrees:ArcMinutes:ArcSeconds,
+just as we do for latitude;
+and, as usual, there are 360 degrees around a full circle.
+For Right Ascension, astronomers always use the convention of
+Hours:Minutes:Seconds.
+There are 24 hours of RA around a circle in the sky,
+because it takes 24 hours for the Sun to move all the 
+way from sunrise to the next sunrise.
+
+<pre><font size=+1>
+  Right Ascension 06:45:09, Declination -16:42:58
+</font></pre>
+meaning
+<UL>
+<LI> the Right Ascension is 6 hours, 45 minutes, 09 seconds
+<LI> the Declination is -16 degrees, 42 arcminutes, 58 arcseconds
+</UL>
+
+<P>
+What's the difference between an "arcminute" and a "minute"?
+Units with the prefix "arc" refer to 
+geometric angles:
+<UL>
+<LI> a circle is divided into 360 degrees
+ <UL>
+ <LI> one degree is divided into 60 arcminutes
+  <UL>
+  <LI> one arcminutes is divided into 60 arcseconds.
+      Therefore, there are 3600 arcseconds in one degree
+  </UL>
+ </UL>
+</UL>
+
+<P>
+On the other hand, a "minute" without the "arc" refers
+to the distance moved by an object due to the Earth's
+rotation.
+The Earth takes (roughly) 24 hours to rotate, 
+so 
+
+<UL>
+<LI> 24 hours of time make a complete circle
+<UL>
+  <LI> one hour of time is divided into 60 minutes of time
+   <UL>
+   <LI> one minute of time is divided into 60 seconds of time.
+      Therefore, there are 3600 seconds of time in one hour of time
+   </UL>
+  </UL>
+</UL>
+
+<P>
+On the celestial equator, one hour of time
+corresponds to 15 degrees.
+However, far from the celestial equator,
+the distance an object moves in one hour
+can be much smaller.
+
+
+<P>
+<hr>
+<P>
+
+<P>
+<a name="altaz">
+<h4>
+Altitude and Azimuth
+</h4>
+These two coordinates,
+<b>altitude</b> (or "alt") 
+and 
+<b>azimuth</b> (or "az"),
+are centered on the observer.
+
+
+<P>
+<img src="./altaz.gif" width=779 height=449>
+
+<P>
+<UL>
+<LI> Altitude is the angular distance of an object
+         above the local horizon.
+         It ranges from 0 degrees at the horizon
+         to 90 degrees at the <b>zenith</b>, the 
+         spot directly overhead.
+<LI> Azimuth is the angular distance of an object
+         from the local North, measured along the horizon.
+         An object which is due North has azimuth = 0 degrees;
+         due East is azimuth = 90 degrees;
+         due South is azimuth = 180 degrees; 
+         due West is azimuth = 270 degrees.
+</UL>
+
+<P>
+These two angles specify uniquely the direction of
+any object in the sky.
+Some telescopes have
+<b>alt-az mounts</b>
+which swivel in these two perpendicular axes;
+camera tripods and tank turrets are other examples
+of alt-az devices.
+
+<P>
+The altitude of an object is especially important from
+an practical point of view:
+any object which has an altitude less than zero is below
+the horizon, and hence inaccessible.
+Moreover, the altitude of an object is related to its
+<b>airmass</b>,
+a measure of how much air the light from that object
+must traverse to reach the observer.
+The larger the airmass, the more light is scattered or 
+absorbed by the atmosphere, and hence the fainter an
+object will appear.
+We'll deal with airmass at greater length a bit later.
+
+
+<P>
+However, note that two observers at different locations on Earth
+will not agree on the (alt, az) position of an object.
+Moreover, as the Earth rotates, an object in the sky appears to 
+move from East to West,
+so its (alt, az) position changes from moment to moment.
+
+<P>
+It is possible to convert from (RA, Dec) to (alt, az), or vice versa.
+One needs to know two factors:
+<UL>
+<LI> the location of the observer on Earth
+<LI> the time of the observation
+</UL>
+The calculations involve some spherical trigonometry.
+One can find the details in any good book on celestial mathematics,
+such as
+
+<UL>
+<LI> <i>Textbook on Spherical Astronomy</i> by W. M. Smart
+<LI> <i>Computational Spherical Astronomy</i> by L. G. Taff
+<LI> <i>Spherical Astronomy</i> by R. M. Green
+<LI> <i>Practical Astronomy with your Calculator</i> by P. J. Duffet-Smith
+<LI> <i>Astronomical Formulae for Calculators</i> by J. Meeus
+</UL>
+
+<P>
+In these modern times, it's usually easiest to use one
+of the many fine planetarium programs on a computer to 
+do this work.
+
+
+
+<P>
+<a name="trig">
+<h4>
+A very little spherical trigonometry
+</h4>
+
+<P>
+You've learned trigonometry in high school: 
+sines, cosines, the Pythagorean Theorem, and all that jazz.
+However, unless you went to a <i>really</i> good high school,
+you probably restricted your calculations to planar geometry.
+Unfortunately, the sky is not a plane.  We measure
+positions and coordinates on the inner surface of an imaginary
+sphere.  
+That means that the old rules don't always work anymore.
+The subject of <b>spherical trigonometry</b> is not a simple one,
+but, in this course, we will only peek into it.
+
+<P>
+Given two vectors, <b>a</b> and <b>b</b>, what is the distance
+between them?
+On a plane, we can break up each vector into its components
+and use the Pythagorean theorem:
+<P>
+<center>
+<img src="./eqn1.gif" width=502 height=107>
+</center>
+
+<P>
+Along the surface of the celestial sphere, 
+if we want to find the <i>angular separation</i> 
+between two points <b>p1</b> and <b>p2</b>, 
+we need to use the law of cosines.
+In the usual case, the two points are expressed
+in Right Ascension (&alpha;) and Declination (&delta;), like so:
+<P>
+<center>
+<img src="./two_points.gif" width=298 height=134>
+</center>
+
+<P>
+In this case, 
+the law of cosines becomes
+<P>
+<img src="./eqn2.gif" width=960 height=54>
+<P>
+which gives us the cosine of the desired
+angular distance &gamma;.
+
+<P>
+If we are interested in very small angular distances
+on the sky -- the separation between the two components of
+a binary star, for example, or the distance between two
+of the moons of Jupiter --
+then there are two common approximations.
+First, if we start with the RA and Dec coordinates of the two points,
+we can make a pseudo-Pythagorean formula; all we have to do is
+correct the difference in Right Ascension with the cosine
+of the Declination.
+<P>
+<center>
+<img src="./pseudo_pythag.gif" width=538 height=77>
+</center>
+
+<P>
+Second, if we start with a picture of some very small region
+of the sky, together with an indication of the scale
+in arcseconds, like this:
+<P>
+<img src="./3C273_scale.jpg" width=504 height=484>
+<P>
+then we can
+<UL>
+<LI> pick any two orthogonal directions on the picture
+<LI> measure the separation (in arcseconds) in each direction
+<LI> use the good old Pythagorean formula
+</UL>
+
+
+
+
+
+
+<P>
+<hr>
+<P>
+
+<P>
+<h4>
+<A href="./radec_q.html">
+Exercises
+</a>
+</h4>
+<P>
+<OL> 
+<LI> Polaris, the North Star, is close to Declination = +90 degrees.
+        If you were standing on the Earth's North Pole, where
+        would you see it in the sky?
+<LI> If you were standing on the Equator, where would you see 
+        Polaris in the Sky?
+<LI> The latitude of Rochester is +43 degrees North.  
+        How far above the horizon is Polaris as seen in Rochester?
+<LI> What is the Declination of the most southern stars
+        we can see in Rochester?
+<LI> Convert the location of the bright star Regulus to decimal degrees:
+  <pre><font size=+1>
+             RA  = 10:08:22.2    Dec = +11:58:02
+  </font</pre>
+
+<LI> Convert the coordinates of Arcturus to sexigesimal notation
+       (HH:MM:SS.s, DD:MM:SS.s)
+  <pre><font size=+1>
+             RA  = 213.91317     Dec = +19.17897
+  </font</pre>
+ 
+<LI> How many degrees are there all the way around
+        the celestial equator?
+<LI> How many arcseconds are there all the way around
+        the celestial equator?
+<LI> What is the angular separation between these two locations, in degrees?
+  <pre><font size=+1>
+                   RA            Dec
+          -------------------------------
+           A      2 hours       0 degrees
+           
+           B      5 hours       0 degrees
+          --------------------------------
+  </font></pre>
+<LI> What is the angular separation between these two locations, in degrees?
+  <pre><font size=+1>
+                   RA            Dec
+          -------------------------------
+           A      2 hours       50 degrees
+           
+           B      5 hours       50 degrees
+          --------------------------------
+  </font></pre>
+
+<LI> (a tough one) What is the angular separation between the bright stars
+          Arcturus and Regulus?  Their coordinates are
+          provided in the questions above.
+</OL>
+
+
+
+
+<P>
+<hr>
+<P>
+
+<!-- Creative Commons License -->
+<P>
+<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/2.0/"><img alt="Creative Commons License" border="0" src="http://creativecommons.org/images/public/somerights20.gif" /></a>
+Copyright &copy; Michael Richmond.
+This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/2.0/">Creative Commons License</a>.
+<P>
+<!-- /Creative Commons License -->
+<!--
+
+<rdf:RDF xmlns="http://web.resource.org/cc/"
+    xmlns:dc="http://purl.org/dc/elements/1.1/"
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+<Work rdf:about="">
+   <dc:type rdf:resource="http://purl.org/dc/dcmitype/Text" />
+   <license rdf:resource="http://creativecommons.org/licenses/by-nc-sa/2.0/" />
+</Work>
+
+<License rdf:about="http://creativecommons.org/licenses/by-nc-sa/2.0/">
+   <permits rdf:resource="http://web.resource.org/cc/Reproduction" />
+   <permits rdf:resource="http://web.resource.org/cc/Distribution" />
+   <requires rdf:resource="http://web.resource.org/cc/Notice" />
+   <requires rdf:resource="http://web.resource.org/cc/Attribution" />
+   <prohibits rdf:resource="http://web.resource.org/cc/CommercialUse" />
+   <permits rdf:resource="http://web.resource.org/cc/DerivativeWorks" />
+   <requires rdf:resource="http://web.resource.org/cc/ShareAlike" />
+</License>
+
+</rdf:RDF>
+
+-->
+
+ 
+</body>
+</html>
+
+
+
