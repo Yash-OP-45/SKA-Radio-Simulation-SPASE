@@ -1,0 +1,4 @@
+1) Download the file "Interactive_das_plots"
+2) Run the code inside the file
+3) Browse http://127.0.0.1:8050/ (or open the Chrome Webpage in the folder) on your browser to access interactive webpage made by Dash and Plotly
+4) Install necessary libraries pandas, plotly, dash, dash-leaflet first
