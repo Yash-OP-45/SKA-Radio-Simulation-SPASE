@@ -3,7 +3,7 @@ GitHub Repository for Simulation project 2024 under Prof. Rohit Sharma, Dept. of
 
 Objective: To simulate hypothetical ground station telescope and measurable night sky objects along with ambient environment conditions and geographical parameters in order to create a digital twin of the entire radio astronomical observation and analysis system.
 
-Softwares and Modules(Subject to update): OSKAR 2.7.6; oskarpy; astropy; matplotlib; pandas; numpy; casacore; Visual Studio Code; SAOImage DS9; Python
+Softwares and Modules(Subject to update): OSKAR 2.7.6; oskarpy; astropy; matplotlib; pandas; numpy; dash; plotly; seaborn; sklearn; casacore; Visual Studio Code; SAOImage DS9; Python
 
 
 
