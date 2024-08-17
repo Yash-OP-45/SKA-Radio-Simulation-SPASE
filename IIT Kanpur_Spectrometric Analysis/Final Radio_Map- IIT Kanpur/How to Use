@@ -1,0 +1,4 @@
+Step 0) Install necessary modules: pip install numpy, pandas, dash, hash_leaflet, plotly, seaborn, sklearn
+Step 1) Head over to Line 15 of the code and change the path to the csv file containing list of locations. Check https://github.com/Yash-OP-45/SKA-Radio-Simulation-SPASE/blob/main/IIT%20Kanpur_Spectrometric%20Analysis/final_csv/locations.csv
+Step 2) Head over to line 56 of the code and change the path containing all the csv files of the measured data. Remember, it is essential that the names of the 20 CSV fies should be exactly same as in the 'Location' column in the locations.csv file
+Step 3) After running the code, open http://127.0.0.1:8052/ to access Radio Map of IIT Kanpur
