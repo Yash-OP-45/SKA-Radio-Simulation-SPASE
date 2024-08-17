@@ -73,7 +73,7 @@ def update_graph(*args):
         html.P(f"50%: {stats['50%']:.2f}"),
         html.P(f"75%: {stats['75%']:.2f}"),
         html.P(f"Maximum: {stats['max']:.2f}")
-    ], style={'padding': '10px', 'backgroundColor': 'lightgray', 'margin': '10px'})
+    ], style={'padding': '10px', 'backgroundColor': 'lightyellow', 'margin': '10px'})
 
     #### k-MEANS CLUSTERING GRAPH ####
     scaler = StandardScaler()
