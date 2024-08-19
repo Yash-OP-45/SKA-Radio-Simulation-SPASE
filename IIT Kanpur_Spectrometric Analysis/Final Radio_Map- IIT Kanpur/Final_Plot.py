@@ -58,9 +58,30 @@ def update_graph(*args):
     csv_running_df.dropna(inplace=True)
 
     #### PLOTLY LINE CHART  ####
-    fig_plotly = go.Figure(data=[go.Scatter(x=csv_running_df['Frequency (Hz)'], y=csv_running_df['Magnitude (Log Mag dB)'], mode='lines', line=dict(width=0.5, color='blue'))])
-    fig_plotly.update_layout(title=f'{location_name} - Frequency vs Magnitude', xaxis_title='Frequency (Hz)', yaxis_title='Magnitude (Log Mag dB)', 
-                              plot_bgcolor='rgba(135, 206, 235, 0.5)', paper_bgcolor='rgba(231, 84, 128, 0.1)')
+    condition = csv_running_df['Frequency (Hz)'] <= 349e6
+    frequency_low = go.Scatter(
+    x=csv_running_df[condition]['Frequency (Hz)'],
+    y=csv_running_df[condition]['Magnitude (Log Mag dB)'],
+    mode='lines',
+    line=dict(width=0.5, color='blue'),
+    showlegend=False
+)
+    frequency_high = go.Scatter(
+    x=csv_running_df[~condition]['Frequency (Hz)'],
+    y=csv_running_df[~condition]['Magnitude (Log Mag dB)'],
+    mode='lines',
+    line=dict(width=0.5, color='red'),
+    showlegend=False
+)   
+    fig_plotly = go.Figure(data=[frequency_low , frequency_high])
+    fig_plotly.update_layout(
+    title=f'{location_name} - Magnitude v/s Frequency',
+    xaxis_title='Frequency (Hz)',
+    yaxis_title='Magnitude (Log Mag dB)',
+    plot_bgcolor='rgba(135, 206, 235, 0.5)',
+    paper_bgcolor='rgba(231, 84, 128, 0.1)'
+)
+
 
     ### STATS BOX ###
     stats = csv_running_df['Magnitude (Log Mag dB)'].describe()
@@ -76,12 +97,35 @@ def update_graph(*args):
     ], style={'padding': '10px', 'backgroundColor': 'lightyellow', 'margin': '10px'})
 
     #### k-MEANS CLUSTERING GRAPH ####
+    """
     scaler = StandardScaler()
     csv_running_df_scaled = scaler.fit_transform(csv_running_df[['Frequency (Hz)', 'Magnitude (Log Mag dB)']])
-    kmeans = KMeans(n_clusters=3, random_state=42)
+    kmeans = KMeans(n_clusters=6, random_state=42)
     kmeans.fit(csv_running_df_scaled)
     labels = kmeans.labels_
     fig_kmeans = px.scatter(x=csv_running_df['Frequency (Hz)'], y=csv_running_df['Magnitude (Log Mag dB)'], color=labels, title='K-Means Clustering with 3 Clusters', labels={"x": "Frequency (Hz)", "y": "Magnitude (Log Mag dB)"})
+    """
+#  CONTOUR PLOT
+
+#    contour_fig = go.Figure()
+
+#    contour_fig.add_trace(go.Contour(
+#    x=csv_running_df['Frequency (Hz)'],
+#    y=csv_running_df['Magnitude (Log Mag dB)'],
+#    z=csv_running_df['Magnitude (Log Mag dB)'],
+#    contours_coloring='heatmap',
+#    colorscale='Viridis',
+#    line_smoothing=0.85,
+#    colorbar=dict(title="Magnitude (Log Mag dB)")
+#))
+
+# contour_fig.update_layout(
+#    title=f'{location_name} - Contour Plot of Frequency vs Magnitude',
+#    xaxis_title='Frequency (Hz)',
+#    yaxis_title='Magnitude (Log Mag dB)',
+#    plot_bgcolor='rgba(135, 206, 235, 0.5)',
+#    paper_bgcolor='rgba(231, 84, 128, 0.1)'
+#)
 
     #### DENSITY PLOT - HISTOGRAM AND CURVE ###
     mean_value = csv_running_df['Magnitude (Log Mag dB)'].mean()
@@ -100,7 +144,7 @@ def update_graph(*args):
     graphs = html.Div([
         dcc.Graph(figure=fig_plotly, style={'height': '400px'}),
         stat_box,
-        dcc.Graph(figure=fig_kmeans, style={'height': '400px'}),
+        #dcc.Graph(figure=fig_kmeans, style={'height': '400px'}),
         dcc.Graph(figure=fig_density, style={'height': '400px'})
     ], style={'display': 'grid', 'grid-template-columns': '1fr', 'gap': '20px', 'padding-top': '0px', 'margin-top': '0px'})
 
